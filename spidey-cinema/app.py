@@ -11,6 +11,9 @@ CORS(app)
 # CONFIGURATION GROQ (SÉCURISÉE)
 # ===============================
 #GROQ_API_KEY = os.environ.get("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")
+GROQ_API_KEY = os.environ.get("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")
+if not GROQ_API_KEY:
+    raise ValueError("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")
 GROQ_API_URL = "https://api.groq.com/openai/v1/chat/completions"
 GROQ_MODEL = "llama-3.3-70b-versatile"
 
@@ -97,3 +100,4 @@ if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
 
     app.run(host="0.0.0.0", port=port)
+
